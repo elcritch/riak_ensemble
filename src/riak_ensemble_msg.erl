@@ -22,6 +22,8 @@
 
 -module(riak_ensemble_msg).
 
+-compile([nowarn_deprecated_function]).
+
 -export([send_all/4,
          send_all/5,
          blocking_send_all/4,
@@ -66,7 +68,7 @@
 -type extra_check() :: undefined | fun(([peer_reply()]) -> boolean()).
 -export_type([extra_check/0]).
 
--record(collect, {replies  :: [peer_reply()], 
+-record(collect, {replies  :: [peer_reply()],
                   parent   :: maybe_from(),
                   id       :: peer_id(),
                   views    :: views(),
