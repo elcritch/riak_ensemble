@@ -25,6 +25,8 @@
 
 -include_lib("riak_ensemble_types.hrl").
 
+-compile([nowarn_deprecated_function]).
+
 %% API
 -export([start_link/4, start/4]).
 -export([join/2, join/3, update_members/3, get_leader/1, backend_pong/1]).
