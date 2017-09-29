@@ -18,11 +18,11 @@
 %%
 %% -------------------------------------------------------------------
 -module(riak_ensemble_test).
--compile(export_all).
 
 -define(ETS_TEST, riak_ensemble_test).
 
 -ifdef(TEST).
+-compile(export_all).
 
 setup() ->
     _ = ets:new(?ETS_TEST, [public, named_table, {read_concurrency, true},
@@ -36,13 +36,5 @@ maybe_drop(Id, PeerId) ->
         _ ->
             false
     end.
-
--else.
-
-setup() ->
-    ok.
-
-maybe_drop(_, _) ->
-    false.
 
 -endif.

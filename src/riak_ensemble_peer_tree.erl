@@ -21,6 +21,8 @@
 -behaviour(gen_server).
 
 %% API
+-compile([nowarn_deprecated_function]).
+
 -export([start_link/3]).
 -export([get/2,
          insert/3,

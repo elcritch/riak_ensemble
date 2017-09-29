@@ -43,7 +43,7 @@
 %% This isolation is provided by spawning an intermediary proxy process.
 
 -module(riak_ensemble_router).
--compile(export_all).
+-compile([nowarn_deprecated_function, nowarn_export_all, export_all]).
 -behaviour(gen_server).
 
 -include_lib("riak_ensemble_types.hrl").
